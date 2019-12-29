@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import {
   MegaMenuUl,
   MegaMenuLi,
-  MegaMenuLink,
   MegaMenuSpan,
   MegaMenuPicture,
   MegaMenuPictureContainer,
@@ -85,7 +84,10 @@ const SuperStoreList2 = () => {
           >
             Apple
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
           <MegaMenuSpan spanColor="primary">Popular</MegaMenuSpan>
         </MegaMenuLi>
         <MegaMenuLi>
@@ -96,7 +98,10 @@ const SuperStoreList2 = () => {
           >
             ASUS
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -106,7 +111,10 @@ const SuperStoreList2 = () => {
           >
             Bose
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
 
         <MegaMenuLi>
@@ -117,7 +125,10 @@ const SuperStoreList2 = () => {
           >
             Canon
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
 
         <MegaMenuLi>
@@ -128,7 +139,10 @@ const SuperStoreList2 = () => {
           >
             Fitbit
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -138,7 +152,10 @@ const SuperStoreList2 = () => {
           >
             Garmin
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
 
         <MegaMenuLi>
@@ -149,7 +166,10 @@ const SuperStoreList2 = () => {
           >
             Huawei
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
 
         <MegaMenuLi>
@@ -160,7 +180,10 @@ const SuperStoreList2 = () => {
           >
             Lenovo
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
 
         <MegaMenuLi>
@@ -171,7 +194,10 @@ const SuperStoreList2 = () => {
           >
             Logitech
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
 
         <MegaMenuLi>
@@ -182,7 +208,10 @@ const SuperStoreList2 = () => {
           >
             Samsung
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
       </MegaMenuUl>
       <MegaMenuUl>
@@ -198,7 +227,10 @@ const SuperStoreList2 = () => {
           >
             Adidas
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -208,7 +240,10 @@ const SuperStoreList2 = () => {
           >
             Aldo
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -218,7 +253,10 @@ const SuperStoreList2 = () => {
           >
             Calvin Klein
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
 
         <MegaMenuLi>
@@ -229,7 +267,10 @@ const SuperStoreList2 = () => {
           >
             Fossil
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -239,7 +280,10 @@ const SuperStoreList2 = () => {
           >
             Hugo Boss
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
 
         <MegaMenuLi>
@@ -250,7 +294,10 @@ const SuperStoreList2 = () => {
           >
             Levis
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -260,7 +307,10 @@ const SuperStoreList2 = () => {
           >
             Nike
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -270,7 +320,10 @@ const SuperStoreList2 = () => {
           >
             Stuart weitzman
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -280,7 +333,10 @@ const SuperStoreList2 = () => {
           >
             Under Armour
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -290,7 +346,10 @@ const SuperStoreList2 = () => {
           >
             Zara
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
       </MegaMenuUl>
       <MegaMenuUl>
@@ -306,7 +365,10 @@ const SuperStoreList2 = () => {
           >
             Echo Dot
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -316,7 +378,10 @@ const SuperStoreList2 = () => {
           >
             Fire Stick
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -326,7 +391,10 @@ const SuperStoreList2 = () => {
           >
             Window 10
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -336,7 +404,10 @@ const SuperStoreList2 = () => {
           >
             Game of Thrones S8
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -346,7 +417,10 @@ const SuperStoreList2 = () => {
           >
             Huawei Honor
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
 
         <MegaMenuLi>
@@ -357,7 +431,10 @@ const SuperStoreList2 = () => {
           >
             Samsung Galaxy
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a
@@ -367,7 +444,10 @@ const SuperStoreList2 = () => {
           >
             Apple iPhone
           </a>
-          <img src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15" />
+          <img
+            alt=""
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+          />
         </MegaMenuLi>
       </MegaMenuUl>
     </>

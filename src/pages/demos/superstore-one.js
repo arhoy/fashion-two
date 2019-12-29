@@ -29,12 +29,13 @@ import {
   H2CenteredLight2,
   H1,
 } from '../../components/reusableStyles/typography/Typography';
-import { amazonItemSearch } from '../../hooks/amazonProductApi/AmazonProductApi';
 
 import SliderContainer1 from '../../components/reusableStyles/slider/SliderContainer1';
 import HerosCard1 from '../../components/reusableStyles/cards/HerosCard1';
 import FeatureSection from '../../components/features/FeatureSection';
 import { ButtonStyle1 } from '../../components/reusableStyles/buttons/Button';
+import { getAmazonProductAPI } from '../../hooks/apiHooks/amazonproducts';
+import AmazonProductAPI from '../../components/amazonproducts/AmazonProductAPI';
 
 const HerosContainer = styled.div`
   z-index: -1;
@@ -228,7 +229,9 @@ const SuperstoreOne = ({ data }) => {
   try {
     useEffect(() => {
       const fetchData = async () => {
-        const results = await amazonItemSearch();
+        const results = await getAmazonProductAPI();
+
+        setResults(results);
       };
       fetchData();
     }, []); // only run on componentDidMount and componentUnmount and query state change
@@ -310,6 +313,13 @@ const SuperstoreOne = ({ data }) => {
           icon={<FaEnvira />}
         />
       </HerosCardContainer>
+
+      <SectionGrey>
+        <Container1200>
+          {results.data > 0 &&
+            results.data.map(result => <AmazonProductAPI item={result} />)}
+        </Container1200>
+      </SectionGrey>
       <Section>
         <CustomH2>
           <Bold>Featured</Bold> Products
