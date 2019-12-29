@@ -42,6 +42,7 @@ const StyledLinkContainer = styled(Link)`
   flex-direction: column;
   justify-content: space-between;
   color: ${props => props.theme.colors.black};
+  text-align: center;
 
   margin: 3rem;
   background: ${props => props.theme.colors.white};
@@ -49,6 +50,35 @@ const StyledLinkContainer = styled(Link)`
 
   width: 28rem;
   height: 25rem;
+`;
+
+const StyledContainer2 = styled.div`
+  cursor: pointer;
+  & h4 {
+    margin: 1rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: ${props => props.theme.colors.black};
+  text-align: center;
+
+  margin: 3rem;
+  background: ${props => props.theme.colors.white};
+  border-radius: 1rem;
+
+  width: 30rem;
+  height: 30rem;
+`;
+
+const StyledLinkContainer2 = styled(StyledLinkContainer)`
+  width: 30rem;
+  height: 30rem;
 `;
 
 const ImageContainer = styled.div`
@@ -105,6 +135,11 @@ const StyledPrice = styled.span`
   font-weight: bold;
 `;
 
+const StyledPrice2 = styled.span`
+  color: ${props => props.theme.colors.black};
+  font-weight: bold;
+`;
+
 const StyledDiscountPrice = styled.span`
   font-size: 2.2rem;
   font-weight: bold;
@@ -142,12 +177,15 @@ const ViewMoreContainer1 = styled.div`
 
 export {
   StyledLinkContainer,
+  StyledLinkContainer2,
+  StyledContainer2,
   ImageContainer,
   DiscountBadge,
   DisplayBadgeContainer,
   StyledImage,
   StyledOldPrice,
   StyledPrice,
+  StyledPrice2,
   StyledImage2,
   StyledImage3,
   StyledDiscountPrice,

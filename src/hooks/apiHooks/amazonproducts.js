@@ -1,3 +1,4 @@
+// Calling the Amazon Products from pilotjs.com
 import axios from 'axios';
 
 // My database for electronics
@@ -31,12 +32,17 @@ export const getAmazonProducts = async (page, limit) => {
 };
 
 // The AMAZON Database
-export const getAmazonProductAPI = async () => {
+export const getAmazonProductAPI = async keywords => {
   let results;
   if (process.env.NODE_ENV === 'development') {
-    results = await axios(`http://localhost:5000/api/v1/amazon-product-api`);
+    console.log('keyword is ', keywords);
+    results = await axios(
+      `http://localhost:5000/api/v1/amazon-product-api?keywords=${keywords}`,
+    );
   } else {
-    results = await axios(`https://pilotjs.com/api/v1/amazon-product-api`);
+    results = await axios(
+      `https://pilotjs.com/api/v1/amazon-product-api?keywords=${keywords}`,
+    );
   }
 
   // setstate of results to results obj. here results.data is the object

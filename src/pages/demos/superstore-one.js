@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import {
   FaGlobeAfrica,
@@ -34,8 +34,7 @@ import SliderContainer1 from '../../components/reusableStyles/slider/SliderConta
 import HerosCard1 from '../../components/reusableStyles/cards/HerosCard1';
 import FeatureSection from '../../components/features/FeatureSection';
 import { ButtonStyle1 } from '../../components/reusableStyles/buttons/Button';
-import { getAmazonProductAPI } from '../../hooks/apiHooks/amazonproducts';
-import AmazonProductAPI from '../../components/amazonproducts/AmazonProductAPI';
+import RenderAmazonProducts from '../../hooks/apiHooks/RenderAmazonProducts';
 
 const HerosContainer = styled.div`
   z-index: -1;
@@ -137,7 +136,8 @@ const textAmazonProducts = () => (
     For Amazon related products, you pay for the product on Amazon after finding
     it on this site, or going to this site first. After your order is shipped to
     our warehouse, we will call you to confirm and ship your product. Our fees
-    for shipping and processing are <Bold>10% of your order + $20. </Bold>
+    for shipping and processing are <Bold>10% of your order + $20. </Bold>. Buy
+    mulitple items and save on shipping.
   </p>
 );
 
@@ -224,21 +224,6 @@ export const query = graphql`
 `;
 
 const SuperstoreOne = ({ data }) => {
-  const [results, setResults] = useState({}); // set results to empty array
-
-  try {
-    useEffect(() => {
-      const fetchData = async () => {
-        const results = await getAmazonProductAPI();
-
-        setResults(results);
-      };
-      fetchData();
-    }, []); // only run on componentDidMount and componentUnmount and query state change
-  } catch (error) {
-    console.error(error);
-  }
-
   const settings = {
     dots: true,
     infinite: true,
@@ -314,12 +299,6 @@ const SuperstoreOne = ({ data }) => {
         />
       </HerosCardContainer>
 
-      <SectionGrey>
-        <Container1200>
-          {results.data > 0 &&
-            results.data.map(result => <AmazonProductAPI item={result} />)}
-        </Container1200>
-      </SectionGrey>
       <Section>
         <CustomH2>
           <Bold>Featured</Bold> Products
@@ -364,15 +343,16 @@ const SuperstoreOne = ({ data }) => {
         </Slider>
       </Section>
 
-      {/* <Section id="inventory">
-        <AmazonProducts
-          title={'Our Inventory'}
-          products={results.data}
-          pagination={results.pagination}
-        />
-      </Section> */}
+      <RenderAmazonProducts keyword={'iphone'} title="iphones on sale" />
 
-      <SectionGrey>
+      <RenderAmazonProducts
+        keyword={'under armour'}
+        title="Latest Under Armour"
+      />
+
+      <RenderAmazonProducts keyword={'Deals'} title="Todays Deals" />
+
+      <Section>
         <Container1200>
           <FeatureSection
             heading="Amazon Products"
@@ -382,9 +362,9 @@ const SuperstoreOne = ({ data }) => {
             rotate="rotate(12deg)"
           />
         </Container1200>
-      </SectionGrey>
+      </Section>
 
-      <Section>
+      <SectionGrey>
         <Container1200>
           <FeatureSection
             heading="Vehicles"
@@ -395,9 +375,9 @@ const SuperstoreOne = ({ data }) => {
             iconSize="10rem"
           />
         </Container1200>
-      </Section>
+      </SectionGrey>
 
-      <SectionGrey>
+      <Section>
         <Container1200>
           <FeatureSection
             heading="Our Warehouse"
@@ -407,7 +387,7 @@ const SuperstoreOne = ({ data }) => {
             rotate="rotate(0deg)"
           />
         </Container1200>
-      </SectionGrey>
+      </Section>
     </SuperStoreLayout>
   );
 };
