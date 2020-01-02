@@ -6,8 +6,11 @@ import { ProductLayout1 } from '../../components/products/ProductContainerStyles
 import {
   Bold,
   H2Centered,
+  P,
 } from '../../components/reusableStyles/typography/Typography';
 import AmazonProductAPI from '../../components/amazonproducts/AmazonProductAPI';
+import { ButtonStyle2Large } from '../../components/reusableStyles/buttons/Button';
+import { StyledA } from '../../components/amazonproducts/AmazonProductsStyling';
 
 const CustomH2 = styled(H2Centered)`
   font-size: 4.2rem;
@@ -17,10 +20,23 @@ const CustomH2 = styled(H2Centered)`
 `;
 
 const CustomSection = styled(Section)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: ${props => props.background || props.theme.colors.white};
+  padding: ${props => props.padding || '2rem'};
 `;
 
-const RenderAmazonProducts = ({ keyword, title }) => {
+const RenderAmazonProducts = ({
+  keyword,
+  title,
+  subtitle,
+  href,
+  limit,
+  background,
+  padding,
+}) => {
   const [results, setResults] = useState({}); // set results to empty array
 
   try {
@@ -29,7 +45,6 @@ const RenderAmazonProducts = ({ keyword, title }) => {
         const results = await getAmazonProductAPI(keyword);
 
         setResults(results);
-        console.log(results);
       };
       fetchData();
     }, [keyword]); // only run on componentDidMount and componentUnmount and query state change
@@ -38,16 +53,24 @@ const RenderAmazonProducts = ({ keyword, title }) => {
   }
   if (results.data) {
     return (
-      <CustomSection>
+      <CustomSection padding={padding} background={background}>
         <CustomH2>
           <Bold>{title}</Bold>
         </CustomH2>
+
         <ProductLayout1>
           {results.data.length > 0 &&
-            results.data.map(result => (
-              <AmazonProductAPI key={result.ASIN} item={result} />
-            ))}
+            results.data
+              .slice(0, limit || 9)
+              .map(result => (
+                <AmazonProductAPI key={result.ASIN} item={result} />
+              ))}
         </ProductLayout1>
+        {subtitle && (
+          <StyledA target="_blank" rel="noopener noreferrer" href={href}>
+            {subtitle}
+          </StyledA>
+        )}
       </CustomSection>
     );
   } else {

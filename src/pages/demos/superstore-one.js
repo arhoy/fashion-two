@@ -6,8 +6,6 @@ import {
   FaAmazon,
   FaCcAmazonPay,
   FaEnvira,
-  FaDollarSign,
-  FaCarAlt,
 } from 'react-icons/fa';
 
 import { graphql } from 'gatsby';
@@ -19,11 +17,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import SuperStoreLayout from '../../components/layouts/SuperStoreLayout';
-import {
-  Section,
-  SectionGrey,
-  Container1200,
-} from '../../components/reusableStyles/sections/Sections';
+import { Section } from '../../components/reusableStyles/sections/Sections';
 import {
   Bold,
   H2CenteredLight2,
@@ -32,8 +26,7 @@ import {
 
 import SliderContainer1 from '../../components/reusableStyles/slider/SliderContainer1';
 import HerosCard1 from '../../components/reusableStyles/cards/HerosCard1';
-import FeatureSection from '../../components/features/FeatureSection';
-import { ButtonStyle1 } from '../../components/reusableStyles/buttons/Button';
+
 import RenderAmazonProducts from '../../hooks/apiHooks/RenderAmazonProducts';
 
 const HerosContainer = styled.div`
@@ -116,45 +109,6 @@ const Blurb = styled.p`
     text-decoration: underline;
   }
 `;
-const Blurb2 = styled(Blurb)`
-  font-weight: 500;
-  margin-top: 1rem;
-`;
-
-const textVehicles = () => (
-  <p>
-    You can also purchase cars through us. If you have found a car you would
-    like to purchase and ship it to Africa, please fill out the form below with
-    the URL of the vehicle you would like to purchase. We will follow up with
-    you shortly. Our shipping rates depend on each country and the weight of the
-    car. Costs typically vary between <Bold> $500 to $900 </Bold>per car.
-  </p>
-);
-
-const textAmazonProducts = () => (
-  <p>
-    For Amazon related products, you pay for the product on Amazon after finding
-    it on this site, or going to this site first. After your order is shipped to
-    our warehouse, we will call you to confirm and ship your product. Our fees
-    for shipping and processing are <Bold>10% of your order + $20. </Bold>. Buy
-    mulitple items and save on shipping.
-  </p>
-);
-
-const textOurWarehouse1 = () => (
-  <>
-    <p>
-      We are a Amazon Associate Partner When checking out on Amazon, use our
-      warehouse address
-      <br />
-      <ButtonStyle1> XX XXX on address line 1</ButtonStyle1>
-    </p>
-    <p style={{ marginTop: '1rem' }}>
-      You can reach our support team if you are having difficulty with purchases
-      or if you have any other questions
-    </p>
-  </>
-);
 
 export const query = graphql`
   {
@@ -255,13 +209,8 @@ const SuperstoreOne = ({ data }) => {
         <HeroBackgroundImage fluid={data.heroImage.childImageSharp.fluid}>
           <HeroContentContainer>
             <HeroContent>
-              <CustomH1>The Amazon Store For Africa</CustomH1>
-              <Blurb>
-                We will deliver to <i>any</i> African country when Amazon won't
-              </Blurb>
-              <Blurb2>
-                Just add our Warehouse on address line 1 during checkout
-              </Blurb2>
+              <CustomH1>The Amazon Partner Store</CustomH1>
+              <Blurb>Buy straight from Amazon</Blurb>
             </HeroContent>
 
             <IconContainer>
@@ -351,43 +300,6 @@ const SuperstoreOne = ({ data }) => {
       />
 
       <RenderAmazonProducts keyword={'Deals'} title="Todays Deals" />
-
-      <Section>
-        <Container1200>
-          <FeatureSection
-            heading="Amazon Products"
-            subheading="Our Pricing"
-            text={textAmazonProducts()}
-            icon={FaDollarSign()}
-            rotate="rotate(12deg)"
-          />
-        </Container1200>
-      </Section>
-
-      <SectionGrey>
-        <Container1200>
-          <FeatureSection
-            heading="Vehicles"
-            subheading="Our Process"
-            text={textVehicles()}
-            icon={FaCarAlt()}
-            rotate="rotate(-15deg)"
-            iconSize="10rem"
-          />
-        </Container1200>
-      </SectionGrey>
-
-      <Section>
-        <Container1200>
-          <FeatureSection
-            heading="Our Warehouse"
-            subheading="Amazon Associate Partner"
-            text={textOurWarehouse1()}
-            icon={FaAmazon()}
-            rotate="rotate(0deg)"
-          />
-        </Container1200>
-      </Section>
     </SuperStoreLayout>
   );
 };

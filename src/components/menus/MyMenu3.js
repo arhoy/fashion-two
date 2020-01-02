@@ -11,17 +11,19 @@ const Container = styled.div`
   height: 100%;
 
   font-weight: bolder;
-  z-index: 2;
+  z-index: 1;
+  overflox-hidden;
 `;
 
 const DropDownContent = styled.div`
+  z-index: 1;
   display: block;
 
   text-align: center;
   width: 100%;
 
   position: absolute;
-  top: 80px;
+  top: ${props => props.dropDownHeightTop || '80px'};
   left: 0;
 `;
 
@@ -40,7 +42,7 @@ const Button = styled.button`
   border: none;
   outline: none;
 
-  padding: 2rem 1.5rem;
+  padding: ${props => props.buttonPadding || '3rem 2rem'};
 
   font-size: 1.6rem;
 
@@ -49,20 +51,28 @@ const Button = styled.button`
   }
 `;
 
-const MyMenu3 = ({ title, children, color }) => {
+const MyMenu3 = ({
+  title,
+  children,
+  color,
+  dropDownHeightTop,
+  buttonPadding,
+}) => {
   const [menu, setMenu] = useState(false);
   const menuHandler = () => {
     setMenu(prevMenu => !prevMenu);
   };
   return (
     <Container>
-      <Button onClick={menuHandler} active={menu}>
+      <Button onClick={menuHandler} active={menu} buttonPadding={buttonPadding}>
         <Title style={{ color }}>{title}</Title>
 
         <Container800>
           {menu && (
             <OutsideAlerter menuhandler={menuHandler}>
-              <DropDownContent>{children}</DropDownContent>
+              <DropDownContent dropDownHeightTop={dropDownHeightTop}>
+                {children}
+              </DropDownContent>
             </OutsideAlerter>
           )}
         </Container800>

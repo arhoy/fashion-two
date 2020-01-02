@@ -113,7 +113,7 @@ const NavSuperStore1 = () => {
         <Logo>
           <LogoLink to="/">
             <LogoSpan2>
-              ALLIANCES<span>119</span>
+              Super<span>Store</span>
             </LogoSpan2>
           </LogoLink>
         </Logo>

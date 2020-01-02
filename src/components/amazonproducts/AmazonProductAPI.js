@@ -8,20 +8,10 @@ import {
   PriceContainer,
   StyledPrice,
   StyledPrice2,
+  StyledA,
 } from './AmazonProductsStyling';
 
 const Details = styled.div`
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 0.5rem;
-    border-radius: 5px;
-    background: ${props => props.theme.colors.primary};
-    color: ${props => props.theme.colors.white};
-    &:hover {
-      background: ${props => props.theme.colors.primaryDark};
-    }
-  }
   p {
     margin: 1rem;
     margin-bottom: 2rem;
@@ -49,7 +39,7 @@ const AmazonProductAPI = ({ item }) => {
 
       {showDetails ? (
         <Details>
-          <p>Checkout on Amazon! Add Warehouse XXXX to address line 1!</p>
+          <p>Checkout on Amazon!</p>
           <p>
             Price w/ Shipping: {` `}
             <StyledPrice2>
@@ -63,13 +53,13 @@ const AmazonProductAPI = ({ item }) => {
               />
             </StyledPrice2>
           </p>
-          <a
+          <StyledA
             target="_blank"
             rel="noopener noreferrer"
             href={item.DetailPageURL[0]}
           >
             Checkout
-          </a>
+          </StyledA>
         </Details>
       ) : (
         <>

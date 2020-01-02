@@ -132,23 +132,17 @@ const SuperStoreList1 = () => {
           />
         </MegaMenuLi>
         <MegaMenuLi>
-          <MegaMenuA
+          <a
             target="_blank"
             rel="noopener noreferrer"
-            href="/computers"
+            href="https://www.amazon.ca/b?_encoding=UTF8&tag=fashionfive-20&linkCode=ur2&linkId=db579a9a612555ba26a81646c9d8cf09&camp=15121&creative=330641&node=680468011"
           >
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.amazon.ca/b?_encoding=UTF8&tag=fashionfive-20&linkCode=ur2&linkId=db579a9a612555ba26a81646c9d8cf09&camp=15121&creative=330641&node=680468011"
-            >
-              Headphones
-            </a>
-            <img
-              src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
-              alt="Headphones"
-            />
-          </MegaMenuA>
+            Headphones
+          </a>
+          <img
+            src="//ir-ca.amazon-adsystem.com/e/ir?t=fashionfive-20&l=ur2&o=15"
+            alt="Headphones"
+          />
         </MegaMenuLi>
         <MegaMenuLi>
           <a

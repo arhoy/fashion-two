@@ -40,6 +40,9 @@ module.exports = {
           {
             family: `Roboto`,
           },
+          {
+            family: `Ubuntu`,
+          },
         ],
       },
     },

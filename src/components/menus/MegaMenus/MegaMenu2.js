@@ -2,6 +2,7 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 const MegaMenuStyle = styled.div`
+  z-index: 2;
   background: ${props => props.background || props.theme.colors.white};
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   padding: 2rem 4rem;
@@ -17,11 +18,7 @@ const MegaMenuStyle = styled.div`
 `;
 
 const MegaMenu2 = ({ children, background }) => {
-  return (
-    <MegaMenuStyle style={{ background: `${background}` }}>
-      {children}
-    </MegaMenuStyle>
-  );
+  return <MegaMenuStyle background={background}>{children}</MegaMenuStyle>;
 };
 
 export default MegaMenu2;

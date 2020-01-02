@@ -175,6 +175,18 @@ const ViewMoreContainer1 = styled.div`
   }
 `;
 
+const StyledA = styled.a`
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.white};
+  &:hover {
+    background: ${props => props.theme.colors.primaryDark};
+  }
+`;
+
 export {
   StyledLinkContainer,
   StyledLinkContainer2,
@@ -195,4 +207,5 @@ export {
   SelectContainer,
   InputRangeContainer,
   ViewMoreContainer1,
+  StyledA,
 };

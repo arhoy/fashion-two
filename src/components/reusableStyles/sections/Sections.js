@@ -111,6 +111,11 @@ const TopSection = styled(Section)`
   padding-top: 2rem;
 `;
 
+const Container1500 = styled.div`
+  max-width: 1500px;
+  margin: 0 auto;
+`;
+
 const Container1200 = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -141,6 +146,7 @@ export {
   SectionHexaGrey,
   SectionParallelGrey,
   TopSection,
+  Container1500,
   Container1200,
   Container1000,
   Container800,
