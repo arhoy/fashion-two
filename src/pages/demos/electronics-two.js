@@ -1,15 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {
-  FaGlobeAfrica,
-  FaSearch,
-  FaAmazon,
-  FaCcAmazonPay,
-  FaEnvira,
-} from 'react-icons/fa';
 
 import { graphql } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
 
 import Slider from 'react-slick';
 
@@ -20,13 +12,10 @@ import ElectronicsLayout2 from '../../components/layouts/ElectronicsLayout2';
 import {
   Section,
   Container1200,
-  Container1500,
-  SectionGrey,
 } from '../../components/reusableStyles/sections/Sections';
 import {
   Bold,
   H2CenteredLight2,
-  H1,
 } from '../../components/reusableStyles/typography/Typography';
 
 import SliderContainer1 from '../../components/reusableStyles/slider/SliderContainer1';

@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import {
   MegaMenuUl,
   MegaMenuLi,
-  MegaMenuA,
   MegaMenuSpan,
   MegaMenuPicture,
   MegaMenuPictureContainer,

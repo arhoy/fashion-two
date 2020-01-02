@@ -23,7 +23,7 @@ const AmazonProductAPI = ({ item }) => {
   const showDetailsHandler = () => {
     setShowDetails(prev => !prev);
   };
-  console.log(item);
+
   const amazonPrice =
     item.OfferSummary &&
     item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];

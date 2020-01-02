@@ -35,7 +35,6 @@ export const getAmazonProducts = async (page, limit) => {
 export const getAmazonProductAPI = async keywords => {
   let results;
   if (process.env.NODE_ENV === 'development') {
-    console.log('keyword is ', keywords);
     results = await axios(
       `http://localhost:5000/api/v1/amazon-product-api?keywords=${keywords}`,
     );

@@ -6,10 +6,9 @@ import { ProductLayout1 } from '../../components/products/ProductContainerStyles
 import {
   Bold,
   H2Centered,
-  P,
 } from '../../components/reusableStyles/typography/Typography';
 import AmazonProductAPI from '../../components/amazonproducts/AmazonProductAPI';
-import { ButtonStyle2Large } from '../../components/reusableStyles/buttons/Button';
+
 import { StyledA } from '../../components/amazonproducts/AmazonProductsStyling';
 
 const CustomH2 = styled(H2Centered)`
