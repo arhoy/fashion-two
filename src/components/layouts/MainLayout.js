@@ -38,6 +38,7 @@ const theme = {
   },
   screenSize: {
     mobileL: '600px',
+    mobileS: '400px',
     mobileVS: '300px',
     eightHundred: '800px',
     nineHundred: '900px',

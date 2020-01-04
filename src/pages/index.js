@@ -41,6 +41,7 @@ const P = styled.p`
   font-size: 1.7rem;
   @media (max-width: ${props => props.theme.screenSize.mobileL}) {
     text-align: center;
+    opacity: 0.9;
     margin: 3rem 0rem;
   }
 `;
@@ -54,8 +55,12 @@ const HerosContainer = styled.div`
 `;
 
 const MainHeroCover = styled(HerosContainer)`
+  position: relative;
   width: 100%;
   height: 100vh;
+  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
+    height: 50vh;
+  }
 `;
 
 const FullNarrowBackgroundImage = styled(BackgroundImage)`
@@ -78,15 +83,20 @@ const CustomBannerContainer = styled.div`
 
 const MainCenterDiv = styled.div`
   position: absolute;
-  color: ${props => props.theme.colors.white};
-  z-index: 4;
   left: 50%;
-  top: 50%;
+  top: 45%;
   transform: translate(-50%, -50%);
+
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  color: ${props => props.theme.colors.white};
+
+  @media (max-width: ${props => props.theme.screenSize.mobileS}) {
+    top: 40%;
+  }
 `;
 
 const StyledParticles = styled(Particles)`
@@ -94,13 +104,35 @@ const StyledParticles = styled(Particles)`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: ${props => props.theme.colors.black};
   opacity: 0.9;
+  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
+    display: none;
+  }
 `;
+
+const MobileHero = styled.div`
+  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background: ${props => props.theme.colors.black};
+    opacity: 0.9;
+  }
+  @media (max-width: ${props => props.theme.screenSize.mobileS}) {
+    height: 40vh;
+  }
+`;
+
 const Blurb = styled.h1`
   text-align: center;
   color: ${props => props.theme.colors.white};
+  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
+    display: none;
+  }
 `;
 
 const FashionDemos = styled.div`
@@ -279,15 +311,12 @@ export const query = graphql`
         }
       }
     }
-
-    fashionDemos: allFile(
-      filter: { relativePath: { regex: "/demos/fashion/" } }
+    logoTransMobile: file(
+      relativePath: { eq: "logos/main/RippleJSLogoTransparent.png" }
     ) {
-      nodes {
-        childImageSharp {
-          fluid(maxWidth: 300, maxHeight: 400) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
+      childImageSharp {
+        fixed(quality: 90, width: 200) {
+          ...GatsbyImageSharpFixed_noBase64
         }
       }
     }
@@ -304,71 +333,7 @@ export const query = graphql`
       }
     }
 
-    picture1: file(relativePath: { eq: "woman.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    picture2: file(relativePath: { eq: "man.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
     picture3: file(relativePath: { eq: "purple-blob.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    picture4: file(relativePath: { eq: "jeans.JPG" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-
-    picture5: file(relativePath: { eq: "runningshoes.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    picture6: file(relativePath: { eq: "jeans_3.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    picture7: file(relativePath: { eq: "woman2.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    picture8: file(relativePath: { eq: "woman4.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    picture9: file(relativePath: { eq: "man2.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    picture10: file(relativePath: { eq: "man2.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1000) {
           ...GatsbyImageSharpFluid_tracedSVG
@@ -389,74 +354,83 @@ export default ({ data }) => {
     <MainLayout full={true}>
       <SEO title="Fashion two" description="Sample Fashion Store" />
       <MainHeroCover>
-        <StyledParticles
-          params={{
-            particles: {
-              number: {
-                value: 250,
-              },
-              // color: {
-              //   value: 'white',
-              // },
-              shape: {
-                type: 'circle',
-                stroke: {
-                  width: 1,
-                  color: '#e2e2e2',
+        {window.innerWidth > 600 && (
+          <StyledParticles
+            params={{
+              particles: {
+                number: {
+                  value: 250,
                 },
-              },
-              opacity: {
-                value: 0.2,
-                random: true,
-                anim: {
-                  enable: false,
-                  speed: 1,
+                // color: {
+                //   value: 'white',
+                // },
+                shape: {
+                  type: 'circle',
+                  stroke: {
+                    width: 1,
+                    color: '#e2e2e2',
+                  },
                 },
-              },
+                opacity: {
+                  value: 0.2,
+                  random: true,
+                  anim: {
+                    enable: false,
+                    speed: 1,
+                  },
+                },
 
-              size: {
-                value: 5,
-                random: false,
-              },
-              line_linked: {
-                enable: true,
-                distance: 90,
-                color: '#fff',
-                width: 1,
-              },
-              move: {
-                enable: true,
-                speed: 2,
-                direction: 'none',
-              },
-            },
-            interactivity: {
-              events: {
-                onhover: {
+                size: {
+                  value: 5,
+                  random: false,
+                },
+                line_linked: {
                   enable: true,
-                  mode: 'repulse',
+                  distance: 90,
+                  color: '#fff',
+                  width: 1,
                 },
-                onclick: {
+                move: {
                   enable: true,
-                  mode: 'bubble',
+                  speed: 2,
+                  direction: 'none',
                 },
               },
-              modes: {
-                repulse: {
-                  distance: 50,
-                  duration: 10,
+              interactivity: {
+                events: {
+                  onhover: {
+                    enable: true,
+                    mode: 'repulse',
+                  },
+                  onclick: {
+                    enable: true,
+                    mode: 'bubble',
+                  },
                 },
-                bubble: {
-                  distance: 100,
-                  size: 50,
+                modes: {
+                  repulse: {
+                    distance: 50,
+                    duration: 10,
+                  },
+                  bubble: {
+                    distance: 100,
+                    size: 50,
+                  },
                 },
               },
-            },
-          }}
-        />
+            }}
+          />
+        )}
+        <MobileHero />
 
         <MainCenterDiv>
-          <Img fixed={data.logoTrans.childImageSharp.fixed} />
+          <Img
+            fixed={
+              window.innerWidth < 600
+                ? data.logoTransMobile.childImageSharp.fixed
+                : data.logoTrans.childImageSharp.fixed
+            }
+          />
           <Blurb>
             {typingComplete ? (
               <Scroll.Link
