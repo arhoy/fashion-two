@@ -359,7 +359,7 @@ export default ({ data }) => {
     <MainLayout full={true}>
       <SEO title="Fashion two" description="Sample Fashion Store" />
       <MainHeroCover>
-        {window.innerWidth > 600 && (
+        {typeof window !== 'undefined' && window.innerWidth > 600 && (
           <StyledParticles
             params={{
               particles: {
@@ -431,7 +431,7 @@ export default ({ data }) => {
         <MainCenterDiv>
           <Img
             fixed={
-              window.innerWidth < 600
+              typeof window !== 'undefined' && window.innerWidth < 600
                 ? data.logoTransMobile.childImageSharp.fixed
                 : data.logoTrans.childImageSharp.fixed
             }
