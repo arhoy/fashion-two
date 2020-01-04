@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { graphql } from 'gatsby';
-
 import Slider from 'react-slick';
 
 import 'slick-carousel/slick/slick.css';
@@ -30,74 +28,7 @@ const CustomH2 = styled(H2CenteredLight2)`
   padding: 1rem;
 `;
 
-export const query = graphql`
-  {
-    heroImage: file(relativePath: { eq: "superstore/hero.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    slider1: file(relativePath: { eq: "superstore/slider1.png" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    slider2: file(relativePath: { eq: "superstore/slider2.png" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    slider3: file(relativePath: { eq: "superstore/slider3.png" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-
-    picture4: file(relativePath: { eq: "watch.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    picture5: file(relativePath: { eq: "tv.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    picture6: file(relativePath: { eq: "apple-iphone-1.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-
-    heroCarousel: allFile(
-      filter: { relativePath: { regex: "/carouselArray1/" } }
-    ) {
-      nodes {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-    }
-  }
-`;
-
-const ElectronicsTwo = ({ data }) => {
+const ElectronicsTwo = () => {
   const settings = {
     dots: true,
     infinite: true,

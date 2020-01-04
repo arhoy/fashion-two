@@ -157,7 +157,7 @@ const CustomButtonStyle2 = styled(ButtonStyle2)`
   }
 `;
 const DemoViewContainer = styled.div`
-  height: 40rem;
+  height: 47rem;
   width: 30rem;
   background: ${props => props.theme.colors.blackTransparent};
   position: absolute;
@@ -175,13 +175,14 @@ const DemoViewContainer = styled.div`
 
 const DemoImage = styled(Img)`
   background-size: contain;
+  object-position: 0% 0%;
 
   width: 100%;
   height: 100%;
 `;
 
 const DemoImageContainer = styled.div`
-  height: 40rem;
+  height: 47rem;
   width: 30rem;
   margin: 2rem;
 
@@ -201,7 +202,7 @@ const DemoImageContainer = styled.div`
   &:before {
     content: '';
     position: absolute;
-    height: 40rem;
+    height: 47rem;
     width: 30rem;
     border: 3px solid ${props => props.theme.colors.primary};
     box-sizing: border-box;
@@ -306,7 +307,7 @@ export const query = graphql`
       relativePath: { eq: "logos/main/RippleJSLogoTransparent.png" }
     ) {
       childImageSharp {
-        fixed(quality: 90, width: 300) {
+        fixed(quality: 90, width: 400) {
           ...GatsbyImageSharpFixed_noBase64
         }
       }

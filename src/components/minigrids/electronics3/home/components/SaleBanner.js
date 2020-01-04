@@ -5,7 +5,7 @@ import { ButtonStyle2Large } from '../../../../reusableStyles/buttons/Button';
 const Container = styled.div`
   padding: 4rem 0.5rem;
   background: ${props => props.theme.colors.white};
-  border: 2rem solid ${props => props.theme.colors.primaryLight};
+  border: 2rem dashed ${props => props.theme.colors.primaryLight};
   margin: 0 auto;
 
   width: 100%;
@@ -49,7 +49,7 @@ export const SaleBanner = () => {
   return (
     <Container>
       <h2>CLEARANCE</h2>
-      <p>Buy One Item, Get a second</p>
+      <p>Buy One, Get a second</p>
       <span>50% OFF</span>
       <ButtonStyle2Large>Shop Now</ButtonStyle2Large>
     </Container>
