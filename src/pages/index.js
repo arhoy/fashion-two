@@ -94,8 +94,18 @@ const MainCenterDiv = styled.div`
   align-items: center;
   color: ${props => props.theme.colors.white};
 
-  @media (max-width: ${props => props.theme.screenSize.mobileS}) {
+  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
     top: 40%;
+    display: none;
+  }
+`;
+
+const MainCenterDivMobile = styled(MainCenterDiv)`
+  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
+    display: flex;
+  }
+  @media (min-width: ${props => props.theme.screenSize.mobileL}) {
+    display: none;
   }
 `;
 
@@ -225,6 +235,15 @@ const DemoImageContainer = styled.div`
 const CustomH2 = styled(H2Centered)`
   font-size: 5rem;
 `;
+
+const LogoImage = styled(Img)`
+  display: none;
+  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
+    display: none;
+  }
+`;
+
+const LogoImageMobile = styled(Img)``;
 
 const whyRipple = () => (
   <>
@@ -359,83 +378,76 @@ export default ({ data }) => {
     <MainLayout full={true}>
       <SEO title="Fashion two" description="Sample Fashion Store" />
       <MainHeroCover>
-        {typeof window !== 'undefined' && window.innerWidth > 600 && (
-          <StyledParticles
-            params={{
-              particles: {
-                number: {
-                  value: 250,
-                },
-                // color: {
-                //   value: 'white',
-                // },
-                shape: {
-                  type: 'circle',
-                  stroke: {
-                    width: 1,
-                    color: '#e2e2e2',
-                  },
-                },
-                opacity: {
-                  value: 0.2,
-                  random: true,
-                  anim: {
-                    enable: false,
-                    speed: 1,
-                  },
-                },
-
-                size: {
-                  value: 5,
-                  random: false,
-                },
-                line_linked: {
-                  enable: true,
-                  distance: 90,
-                  color: '#fff',
+        <StyledParticles
+          params={{
+            particles: {
+              number: {
+                value: 250,
+              },
+              // color: {
+              //   value: 'white',
+              // },
+              shape: {
+                type: 'circle',
+                stroke: {
                   width: 1,
+                  color: '#e2e2e2',
                 },
-                move: {
+              },
+              opacity: {
+                value: 0.2,
+                random: true,
+                anim: {
+                  enable: false,
+                  speed: 1,
+                },
+              },
+
+              size: {
+                value: 5,
+                random: false,
+              },
+              line_linked: {
+                enable: true,
+                distance: 90,
+                color: '#fff',
+                width: 1,
+              },
+              move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+              },
+            },
+            interactivity: {
+              events: {
+                onhover: {
                   enable: true,
-                  speed: 2,
-                  direction: 'none',
+                  mode: 'repulse',
+                },
+                onclick: {
+                  enable: true,
+                  mode: 'bubble',
                 },
               },
-              interactivity: {
-                events: {
-                  onhover: {
-                    enable: true,
-                    mode: 'repulse',
-                  },
-                  onclick: {
-                    enable: true,
-                    mode: 'bubble',
-                  },
+              modes: {
+                repulse: {
+                  distance: 50,
+                  duration: 10,
                 },
-                modes: {
-                  repulse: {
-                    distance: 50,
-                    duration: 10,
-                  },
-                  bubble: {
-                    distance: 100,
-                    size: 50,
-                  },
+                bubble: {
+                  distance: 100,
+                  size: 50,
                 },
               },
-            }}
-          />
-        )}
+            },
+          }}
+        />
+
         <MobileHero />
 
         <MainCenterDiv>
-          <Img
-            fixed={
-              typeof window !== 'undefined' && window.innerWidth < 600
-                ? data.logoTransMobile.childImageSharp.fixed
-                : data.logoTrans.childImageSharp.fixed
-            }
-          />
+          <LogoImage fixed={data.logoTrans.childImageSharp.fixed} />
           <Blurb>
             {typingComplete ? (
               <Scroll.Link
@@ -468,6 +480,9 @@ export default ({ data }) => {
             )}
           </Blurb>
         </MainCenterDiv>
+        <MainCenterDivMobile>
+          <LogoImageMobile fixed={data.logoTransMobile.childImageSharp.fixed} />
+        </MainCenterDivMobile>
       </MainHeroCover>
 
       <Section id="rippleDemos">
