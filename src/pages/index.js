@@ -222,6 +222,10 @@ const DemoImageContainer = styled.div`
   }
 `;
 
+const CustomH2 = styled(H2Centered)`
+  font-size: 5rem;
+`;
+
 const whyRipple = () => (
   <>
     <P>
@@ -467,7 +471,7 @@ export default ({ data }) => {
       </MainHeroCover>
 
       <Section id="rippleDemos">
-        <H2Centered> DEMOS</H2Centered>
+        <CustomH2> DEMOS</CustomH2>
 
         <FashionDemos>
           {data.demos.nodes.map((node, i) => (

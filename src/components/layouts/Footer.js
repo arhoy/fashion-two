@@ -77,9 +77,9 @@ const Footer = () => {
       tel: 1 888 FASHION
       <FooterBlurb>Fashion two STORE {d} &copy; </FooterBlurb>
       <Attribution>
-        Created by{' '}
+        Created by
         <A target="_blank" rel="noopener noreferrer" href="https://aquasar.io/">
-          Aquasar.io
+          {` `}Aquasar.io
         </A>
       </Attribution>
     </FooterStyle>

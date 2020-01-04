@@ -9,14 +9,11 @@ const Container = styled.div`
   margin: 0 auto;
 
   width: 100%;
-  min-height: 63vh;
+  min-height: 78vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
-  }
 
   h2 {
     color: ${props => props.theme.colors.white};

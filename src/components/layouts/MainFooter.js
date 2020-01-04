@@ -43,6 +43,7 @@ const A = styled.a`
   font-size: 1.2rem;
   color: ${props => props.theme.colors.black};
   text-decoration: none;
+  text-transform: uppercase;
 `;
 const Attribution = styled.p`
   font-size: 1.2rem;
@@ -77,9 +78,9 @@ const MainFooter = () => {
       tel: 587 772 5536
       <FooterBlurb>RIPPLEJS THEMES {d} &copy; </FooterBlurb>
       <Attribution>
-        Created by
+        Created by {` `}
         <A target="_blank" rel="noopener noreferrer" href="https://aquasar.io/">
-          Aquasar.io
+          aquasar.io
         </A>
       </Attribution>
     </FooterStyle>
