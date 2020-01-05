@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import NoStyleLink from '../../Links/NoStyleLink';
 
 const Logo = () => {
   const data = useStaticQuery(
@@ -19,7 +20,11 @@ const Logo = () => {
     `,
   );
 
-  return <Img fixed={data.logoNavigation.childImageSharp.fixed} />;
+  return (
+    <NoStyleLink to="/">
+      <Img fixed={data.logoNavigation.childImageSharp.fixed} />
+    </NoStyleLink>
+  );
 };
 
 export default Logo;

@@ -69,6 +69,11 @@ const P = styled.p`
   }
 `;
 
+const PBasic = styled.p`
+  padding: 1rem 0rem;
+  font-size: 1.6rem;
+`;
+
 export {
   H1,
   H2,
@@ -82,5 +87,6 @@ export {
   Span,
   Bold,
   P,
+  PBasic,
   ProductPageH1,
 };

@@ -43,6 +43,9 @@ module.exports = {
           {
             family: `Ubuntu`,
           },
+          {
+            family: `Merienda`,
+          },
         ],
       },
     },

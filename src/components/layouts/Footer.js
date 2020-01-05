@@ -74,8 +74,8 @@ const Footer = () => {
         </StyledImage>
         | Alberta
       </Div>
-      tel: 1 888 FASHION
-      <FooterBlurb>Fashion two STORE {d} &copy; </FooterBlurb>
+      tel: 587 772 5536
+      <FooterBlurb>Ripple JS Themes {d} &copy; </FooterBlurb>
       <Attribution>
         Created by
         <A target="_blank" rel="noopener noreferrer" href="https://aquasar.io/">
